@@ -8,9 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "vee-validate": "^2.0.3",
     "vue": "^2.5.13",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue2-org-tree": "^1.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-alpha.12",

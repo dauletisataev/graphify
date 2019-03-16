@@ -1,7 +1,10 @@
 <template>
   <div class="about">
-    <h1>Hello {{ their_name }}, this is an about page</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali...</p>
+    <Vue2OrgTree
+      :data="node"
+      :props="props"
+      :collapsable="true">
+    </Vue2OrgTree>
   </div>
 </template>
 
@@ -10,7 +13,59 @@ export default {
   name: 'Skills',
   data() {
     return {
-      their_name: this.$route.params.name
+      node:{
+        value: 'asdasd',
+        nodes:[
+          {
+            value: 'asdasd',
+            answer: 'ffff',
+            expand: true
+          },
+          {
+            value: 'asdasd',
+            answer: 'fff',
+            expand: true
+          },
+          {
+            value: 'asdasd',
+            answer: 'fff',
+            expand: true
+          },
+          {
+            value: 'asdasd',
+            answer: 'fff',
+            expand: true,
+            nodes:[
+          {
+            value: 'asdasd',
+            answer: 'ffff',
+            expand: true
+          },
+          {
+            value: 'asdasd',
+            answer: 'fff',
+            expand: true
+          },
+          {
+            value: 'asdasd',
+            answer: 'fff',
+            expand: true
+          },
+          {
+            value: 'asdasd',
+            answer: 'fff',
+            expand: true
+          }
+        ]
+          }
+        ],
+        expand: true
+      },
+      props: {
+        label: 'value',
+        children: 'nodes',
+        expand: 'expand'
+      }
     }
   }
 }

@@ -35,9 +35,6 @@ body, html {
   margin: 0;
   height: 100%;
 }
-#app {
-    width: 50%;
-}
 
 nav {
   padding: 20px 20px 20px 0;
