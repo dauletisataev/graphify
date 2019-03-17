@@ -15,11 +15,13 @@ export default {
   mounted(){
     console.log('asdas')
     axios
-      .get('http://127.0.0.1:8000/mains/first_create/')
+      .get('http://127.0.0.1:8000/mains/first_create')
       .then(response => {
         console.log(response.data)
         this.$router.push(`/graph/${response.data.root.id}`)
-      })
+      }).catch(error => {
+        console.log(error)
+    });
   },
   methods:{
     onExpand(e){

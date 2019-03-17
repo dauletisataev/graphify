@@ -15,6 +15,11 @@ export default new Router({
     },
     {
       path: '/graph/:id',
+      name: 'graphId',
+      component: Graph
+    },
+    {
+      path: '/graph',
       name: 'graph',
       component: Graph
     },

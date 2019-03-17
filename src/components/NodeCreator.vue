@@ -178,6 +178,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     name: 'nodeCreator',
     props: ["show"],
@@ -403,7 +404,21 @@ export default {
             document.body.appendChild(downloadAnchorNode); // required for firefox
             downloadAnchorNode.click();
             downloadAnchorNode.remove();
-        } 
+        },
+
+
+        saveNode(){
+            let _this = this
+            axios.post('http://127.0.0.1:8000/mains/second_create/', {
+                ..._this.node
+            })
+            .then(function(res) {
+                console.log(res)
+            })
+            .catch(function(err) {
+                console.log(err)
+            })
+        }
     }
 }
 </script>

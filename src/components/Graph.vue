@@ -95,12 +95,12 @@ export default {
     nodeCreator
   },
   mounted(){
-    // console.log('asdas')
-    // axios
-    //   .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-    //   .then(response => {
-    //     (console.log(response))
-    //   })
+    console.log(this.$route.params.id)
+    axios
+      .get('http://127.0.0.1:8000/mains/find/'+this.$route.params.id)
+      .then(response => {
+        (console.log(response))
+      })
   },
   methods:{
     onExpand(e){
@@ -131,12 +131,15 @@ export default {
   .main{
     display: flex;
     flex-direction: row;
+
   } 
   .changing-card{
     position: absolute;
     right: 20px;
   }
   .about{
+    min-width: 800px;
+    min-height: 800px;
     max-width: 800px;
     max-height: 800px;
     overflow: scroll
