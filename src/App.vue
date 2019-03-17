@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/">Главная</router-link>
-      <router-link to="/new-graph">Новый</router-link>
+      <router-link to="/graph">Новый</router-link>
     </nav>
     <router-view />
   </div>
