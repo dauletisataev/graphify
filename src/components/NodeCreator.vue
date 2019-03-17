@@ -168,6 +168,7 @@
                     </v-container>
                     <v-card-actions>
                         <v-btn small @click="saveAndExit()" color="success">Сохранить</v-btn>
+                        <v-btn small @click="downloadObjectAsJson(node, 'treeMap')"  color="primary">Экспорт</v-btn>
                         <v-btn small @click="closeCreator()" flat color="error">Закрыть</v-btn>
                     </v-card-actions>
             </div>
@@ -392,6 +393,16 @@ export default {
                 this.node.tag_id = ''
                 this.node.tag = ''
             }
+        },
+
+        downloadObjectAsJson(exportObj, exportName){
+            var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+            var downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href",     dataStr);
+            downloadAnchorNode.setAttribute("download", exportName + ".json");
+            document.body.appendChild(downloadAnchorNode); // required for firefox
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
         } 
     }
 }

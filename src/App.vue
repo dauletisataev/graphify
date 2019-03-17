@@ -1,22 +1,17 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Главная</router-link>
+      <router-link to="/new-graph">Новый</router-link>
     </nav>
-
     <router-view />
   </div>
 </template>
 
 <script>
-import Skills from './components/Skills.vue'
 
 export default {
-  name: 'app',
-  components: {
-    Skills
-  }
+  name: 'app'
 }
 </script>
 

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Skills from './components/Skills.vue'
-import About from './components/About.vue'
+import Main from './components/Main.vue'
+import Graph from './components/Graph.vue'
+import NewGraph from './components/NewGraph.vue'
 
 Vue.use(Router)
 
@@ -10,12 +11,18 @@ export default new Router({
     {
       path: '/',
       name: 'skills',
-      component: Skills
+      component: Main
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/graph/:id',
+      name: 'graph',
+      component: Graph
+    },
+    {
+      path: '/new-graph',
+      name: 'new-graph',
+      component: NewGraph
     }
+    
   ]
 })

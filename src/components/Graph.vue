@@ -16,11 +16,12 @@
       :show="isNodeCreatorShown"
       @close="isNodeCreatorShown = false">
     </nodeCreator>
-  </div>
+  </div> 
 </template>
 
 <script>
 import nodeCreator from './NodeCreator.vue'
+import axios from 'axios'
 export default {
   name: 'Skills',
   data() {
@@ -86,11 +87,20 @@ export default {
         label: 'value',
         children: 'children',
         expand: 'expand'
-      }
+      },
+      isDataLoading: false
     }
   },
   components:{
     nodeCreator
+  },
+  mounted(){
+    // console.log('asdas')
+    // axios
+    //   .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    //   .then(response => {
+    //     (console.log(response))
+    //   })
   },
   methods:{
     onExpand(e){
@@ -112,7 +122,8 @@ export default {
         }
       }
     }
-  }
+  },
+
 }
 </script>
 
@@ -127,7 +138,8 @@ export default {
   }
   .about{
     max-width: 800px;
-    overflow-x: scroll
+    max-height: 800px;
+    overflow: scroll
   }
   .org-tree-node-label {
     cursor: pointer
